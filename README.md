@@ -1,43 +1,78 @@
-# TechStore - Loja de Componentes de Informática
+# Sistema de Gerenciamento de Componentes de Informática
 
-Este projeto foi desenvolvido por **Arthur Gutemberg** como parte da Atividade de 10 de Junho de 2026. Trata-se de um sistema completo de gerenciamento de componentes de informática utilizando o framework **Laravel**.
+Este repositório contém o projeto desenvolvido por Arthur Gutemberg como parte da atividade acadêmica de 10 de Junho de 2026. O sistema consiste em uma plataforma de gerenciamento para uma loja de componentes de informática, implementada utilizando o framework Laravel 11.
 
-## 🚀 Tecnologias Utilizadas
+## Descrição do Projeto
 
-- **Framework:** Laravel 11.x
-- **Linguagem:** PHP 8.3
-- **Banco de Dados:** SQLite (configurado para facilidade de execução)
-- **Frontend:** Tailwind CSS, Font Awesome
-- **Segurança:** CSRF Protection, Validação de Dados
+O objetivo deste projeto é demonstrar a aplicação prática de conceitos fundamentais do desenvolvimento web moderno, incluindo arquitetura MVC (Model-View-Controller), persistência de dados, rotas personalizadas e segurança de aplicações. A interface foi projetada para ser estética e moderna, utilizando Tailwind CSS para garantir responsividade e uma experiência de usuário profissional.
 
-## 📋 Requisitos Implementados
+## Requisitos Técnicos Implementados
 
-Conforme solicitado no exercício, as seguintes funcionalidades foram implementadas:
+Em conformidade com as diretrizes do exercício, as seguintes funcionalidades foram rigorosamente implementadas:
 
-1.  **ROTA FALLBACK:** Implementada para capturar URLs inexistentes e redirecionar para uma página de erro 404 personalizada e amigável.
-2.  **MIGRATIONS:** Estrutura de banco de dados definida através de migrations, incluindo a tabela `componentes` com campos para nome, descrição, preço, estoque, categoria, marca, modelo e imagem.
-3.  **FORMULÁRIO COM AUTENTICAÇÃO CSRF PROTECTION:** Todos os formulários de criação e edição utilizam a diretiva `@csrf` do Laravel para proteção contra ataques Cross-Site Request Forgery.
-4.  **COMENTÁRIO NO ALGORITMO:** O código fonte (Controllers, Models, Routes) está devidamente comentado em português, explicando a função de cada bloco.
-5.  **INTERFACE MODERNA:** Design responsivo e estético utilizando Tailwind CSS, com animações e componentes visuais modernos.
+1. **Tratamento de Exceções de Rota (Fallback):** Implementação de uma rota de contingência que captura solicitações para URLs inexistentes, redirecionando o usuário para uma página de erro 404 personalizada e integrada à identidade visual do sistema.
+2. **Migrações de Banco de Dados (Migrations):** Definição da estrutura de dados através de migrations do Laravel, garantindo a integridade e portabilidade do banco de dados SQLite. A tabela de componentes inclui campos detalhados como nome, descrição, preço, estoque, categoria, marca, modelo e referências de imagem.
+3. **Segurança de Formulários (CSRF Protection):** Todos os pontos de entrada de dados via formulários estão protegidos contra ataques Cross-Site Request Forgery através da implementação da diretiva de segurança nativa do framework.
+4. **Documentação de Código:** O algoritmo e a lógica de negócios contidos em Controllers, Models e arquivos de rotas foram extensivamente comentados em língua portuguesa, facilitando a manutenção e compreensão do fluxo de dados.
+5. **Interface de Usuário:** Desenvolvimento de views Blade com design contemporâneo, utilizando componentes estéticos e funcionais.
 
-## 🖼️ Views Publicadas
+## Instruções para Execução
 
-O sistema conta com as seguintes views principais:
+Para executar este projeto em ambiente local, siga os procedimentos descritos abaixo:
 
--   **Home (`/`):** Página inicial com design moderno, hero section e destaques da loja.
--   **Catálogo (`/componentes`):** Lista todos os componentes cadastrados em formato de cards elegantes.
--   **Novo Componente (`/componentes/create`):** Formulário completo para cadastro de novos produtos com upload de imagem.
--   **Detalhes (`/componentes/{id}`):** Visualização detalhada de um componente específico.
--   **Edição (`/componentes/{id}/edit`):** Interface para atualizar dados de componentes existentes.
--   **Erro 404:** Página personalizada exibida quando uma rota não é encontrada.
+### Pré-requisitos
 
-## 🛠️ Como Executar o Projeto
+* PHP 8.2 ou superior
+* Composer
+* Extensão SQLite para PHP
 
-1.  Clone o repositório.
-2.  Instale as dependências: `composer install`.
-3.  Configure o ambiente: `cp .env.example .env` e `php artisan key:generate`.
-4.  Execute as migrations: `php artisan migrate`.
-5.  Inicie o servidor: `php artisan serve`.
+### Procedimento de Instalação
 
----
-Desenvolvido com ❤️ por **Arthur Gutemberg**
+1. Clone este repositório para o seu ambiente local:
+   ```bash
+   git clone https://github.com/ArthurGutemberg9/componentes-informatica-arthur.git
+   ```
+
+2. Acesse o diretório do projeto:
+   ```bash
+   cd componentes-informatica-arthur
+   ```
+
+3. Instale as dependências do projeto via Composer:
+   ```bash
+   composer install
+   ```
+
+4. Configure o arquivo de ambiente:
+   ```bash
+   cp .env.example .env
+   ```
+
+5. Gere a chave da aplicação:
+   ```bash
+   php artisan key:generate
+   ```
+
+6. Execute as migrações para preparar o banco de dados (o arquivo SQLite será criado automaticamente):
+   ```bash
+   php artisan migrate
+   ```
+
+7. Inicie o servidor de desenvolvimento:
+   ```bash
+   php artisan serve
+   ```
+
+O sistema estará acessível através do endereço `http://localhost:8000`.
+
+## Estrutura de Pastas Principal
+
+* `app/Http/Controllers`: Lógica de controle do sistema.
+* `app/Models`: Definições de entidades e regras de negócio.
+* `database/migrations`: Histórico de evolução do banco de dados.
+* `resources/views`: Templates Blade da interface do usuário.
+* `routes/web.php`: Definição de rotas e lógica de fallback.
+
+## Licença
+
+Este projeto foi desenvolvido exclusivamente para fins educacionais.
